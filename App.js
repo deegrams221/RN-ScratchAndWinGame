@@ -1,7 +1,15 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { Button } from 'native-base';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+
+// TODO: set a limit so users can only click 5 scratch items
 
 // get array of length 25
 var itemArray = new Array(25).fill('empty');
@@ -75,8 +83,8 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <Text style={styles.containertext}>Scratch and Win Game!</Text>
+        <View style={styles.topbar}>
+          <Text style={styles.toptext}>Scratch and Win Game!</Text>
         </View>
         <View style={styles.grid}>
           <View style={styles.itemrow}>
@@ -422,8 +430,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  containertext: {
+  topbar: {
+    backgroundColor: '#8b78e6',
+    justifyContent: 'center',
+    width: Dimensions.get('window').width,
+    marginVertical: 20,
+  },
+  toptext: {
     fontSize: 30,
+    textAlign: 'center',
+    color: '#FFF',
   },
   grid: {},
   itemrow: {
