@@ -457,6 +457,6 @@ const styles = StyleSheet.create({
   },
   buttontext: {
     color: '#FFF',
-    fontSize: 20,
+    fontSize: 25,
   },
 });
